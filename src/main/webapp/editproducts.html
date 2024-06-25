@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <title>Ürün Düzenleme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <section class="nav__side" style="margin-bottom: 70px;">
+        <nav>
+          <div class="barand"><a href="homepage.html"><img src="img/logo.png" alt=""></a></div>
+            <div class="searchbar">
+                <input type="text">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="links">
+                <div class="bell">
+                    <i class="fa-solid fa-bell"></i>
+                  <span></span>
+                </div>
+                <div class="cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                      <span></span>
+                </div>
+                <div class="user" id="profile_dropdown">
+                    <i class="fa-regular fa-circle-user"></i>
+                </div>
+            </div>
+            <div class="profilre_dropdown">
+                <ul>
+                    <li><a href="#">Profil Ayarlari</a></li>
+                    <li><a href="adminpage.html">Admin Paneli</a></li>
+                    <li><a href="loginpage.html" target="_blank" >Kayit Ol - Giris Yap</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="nav2">
+            <div>
+                <ul>
+                    <li><a href="dresspage.html">Kiyafet</a></li>
+                    <li><a href="electronicpage.html">Elektronik</a></li>
+                    <li><a href="gardenpage.html">Bahce</a></li>
+                    <li><a href="homelifepage.html">Ev,Yaşam</a></li>
+                    <li><a href="mombaby.html">Anne,Bebek</a></li>
+                    <li><a href="sportpage.html">Spor</a></li>
+                    <li><a href="cosmeticpage.html">Kozmetik</a></li>
+                    <li><a href="bookmusicpage.html">Kitap,Müzik</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+  <div id="box2" class="box-content" style="margin-bottom: 25px;">
+    <h3>Ürünü Düzenle</h3>
+    <form class="input" action="add_Products" method="post" enctype="multipart/form-data">
+      <div class="form-container">
+        <div class="image-upload">
+          <img id="image-preview" src="#" alt="Resim Önizlemesi" style="display:none; margin-bottom:10px; width:100%; max-width:200px;">
+          <label for="upload-image">
+            <i class="fa fa-camera"></i> Resim Ekle
+          </label>
+          <input type="file" id="upload-image" name="bimg" accept="image/*" onchange="previewImage(event)" required>
+        </div>
+        <div class="form-fields">
+          <input type="number" class="inputfile" placeholder="Ürün Adı" name="Product_id" required type= "hidden">
+          <input type="text" class="inputfile" placeholder="Ürün Adı" name="Title" required>
+          <input type="number" class="inputfile" placeholder="Ürün Fiyatı" name="Price" required>
+          <input type="text" class="inputfile" placeholder="Ürün Açıklaması" name="Description" required>
+          <select class="inputfile" name="Category" required>
+            <option value="">Kategori Seçin</option>
+            <option value="Kategori 1">Kategori 1</option>
+            <option value="Kategori 2">Kategori 2</option>
+            <option value="Kategori 3">Kategori 3</option>
+          </select>
+          <button type="submit" class="add-product-btn">Kaydet</button>
+        </div>
+      </div>
+    </form>
+  </div> 
+
+
+<!-- Site footer -->
+<footer class="site-footer" style="margin-top: 200px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>Hakkimizda</h6>
+          <p class="text-justify">JojaCart<i> </i></p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Kategori</h6>
+          <ul class="footer-links">
+            <li><a href="aboutuspage.html">Hakkimizda</a></li>
+            <li><a href="communicationpage.html">İletisim</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Hizli Link</h6>
+          <ul class="footer-links">
+            <li><a href="#">İletisim</a></li>
+            <li><a href="#">Destek</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">JojaCart &copy; 2024 All Rights Reserved by 
+       <a href="#">JojaCart</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+   
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+</body>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <%@ include file="navbar.jsp" %>
+
+    <form action="">
+            
+    <div id="box3" class="box-content" style="margin-bottom: 25px;">
+      <h3>Ürünlerim</h3>
+        <table class="table table-striped">
+        <thead class="bg-primary text-white">
+        <tr>
+          <th scope="col">Image</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>	
+          <th scope="col">Price</th>
+          <th scope="col">Category</th>
+          <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+      
+
+      
+        <%
+        ProductsDAOImpl dao = new ProductsDAOImpl(DBConnect.getConnection());
+        List<Products> list =dao.getMyProducts(request);
+        for(Products p:list){%>
+          <tr>
+
+    <td><img alt="" src="<%= request.getContextPath() %>/ItemImg/<%= p.getPhoto_name() %>" style="width: 50px; height: 50px;"></td>
+
+          <td><%=p.getTitle()%></td>
+          <td><%=p.getDescirption()%></td>
+          <td><%=p.getSale_price()%></td>
+          <td><%=p.getCatagory_name()%></td>
+          <td><span class="edit-icons">
+                <a href="editproducts.html"><i class="fa fa-pencil icon-pencil" aria-label="Duzenle"></i></a>
+                <i class="fa fa-times icon-delete" style="margin-left: 15px;" aria-label="Sil"></i>
+            </span></td>
+          
+          </tr>
+       <%}
+        
+        %>
+        </tbody>
+        </table>
+    </form>
+
+  </div>   
+<!-- Site footer -->
+<footer class="site-footer" style="margin-top: 500px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>Hakkimizda</h6>
+          <p class="text-justify">JojaCart<i> </i></p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Kategori</h6>
+          <ul class="footer-links">
+            <li><a href="aboutuspage.html">Hakkimizda</a></li>
+            <li><a href="communicationpage.html">İletisim</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Hizli Link</h6>
+          <ul class="footer-links">
+            <li><a href="#">İletisim</a></li>
+            <li><a href="#">Destek</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">JojaCart &copy; 2024 All Rights Reserved by 
+       <a href="#">JojaCart</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+   
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+</body>
