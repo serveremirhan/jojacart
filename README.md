@@ -20,8 +20,6 @@ Müşteri Paneli
 
     Sipariş Geçmişi: Daha önce verdiği siparişleri görüntüleyebilir.
 
-    Güvenli Ödeme: Güvenli ödeme yöntemleri ile alışverişini tamamlayabilir.
-
     Profil Yönetimi: Müşteri bilgileri güncellenebilir.
 
 Teknolojiler
@@ -49,16 +47,19 @@ Veritabanı Yapılandırması
 
     MSSQL Server: Veritabanı sunucunuzda JojocartDB adında bir veritabanı oluşturun.
 
-    Veritabanı Bağlantısı: Projenin src/main/resources/application.properties veya application.yml dosyasında veritabanı bağlantı bilgilerini güncelleyin:
+    Veritabanı Bağlantısı: Projenin /main/java/com/DB/DBConnect.java dosyasında veritabanı bağlantı bilgilerini güncelleyin:
 
-    spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=JojocartDB;
-    spring.datasource.username=your_username
-    spring.datasource.password=your_password
+
+    Aşagıdaki blogu bulun ve güncelleyin
+
+    String url = "jdbc:sqlserver://" + host + "\\" + instanceName + ";databaseName=" + databaseName +
+                     ";user=" + username + ";password=" + password +
+                     ";encrypt=true;trustServerCertificate=true";
 
 Projeyi Çalıştırma
 
     Projeyi klonlayın:
-    git clone https://github.com/kullaniciadi/jojocart.git
+    git clone https://github.com/serveremirhan/jojocart.git
 
     Proje dizinine gidin:
     cd jojocart
@@ -70,9 +71,5 @@ Projeyi Çalıştırma
     mvn spring-boot:run
 
 Uygulama varsayılan olarak http://localhost:8080 adresinde çalışacaktır.
-Lisans
 
-Bu proje, [Lisans Adı] lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına bakınız.
-Katkıda Bulunma
 
-Projeye katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue açın. Her türlü katkı memnuniyetle karşılanır.
